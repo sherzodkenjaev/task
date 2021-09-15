@@ -15,9 +15,16 @@ function Header() {
 
   return (
     <div className="header">
-      <Link to="/" className="logo" style={{ textDecoration: "inherit" }}>
+      <a
+        href="/"
+        className="logo"
+        style={{ textDecoration: "inherit" }}
+        onClick={() => {
+          Redirect("/");
+        }}
+      >
         <h3>Home</h3>
-      </Link>
+      </a>
       <a
         href="/products"
         className="logo"
@@ -38,9 +45,16 @@ function Header() {
       >
         <h3>Search</h3>
       </a>
-      <Link to="/login" className="logo" style={{ textDecoration: "inherit" }}>
+      <a
+        href="/login"
+        className="logo"
+        style={{ textDecoration: "inherit" }}
+        onClick={() => {
+          Redirect("/login");
+        }}
+      >
         {!token ? <h3>Login</h3> : <h3 onClick={handleLogout}>Logout</h3>}
-      </Link>
+      </a>
     </div>
   );
 }
